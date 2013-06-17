@@ -12,3 +12,7 @@ kernel: kmain.o start.o Makefile
 
 run: kernel
 	qemu-system-i386 -kernel kernel
+
+# Other demos
+boot.img: boot.s
+	yasm -f bin -o boot.img boot.s
