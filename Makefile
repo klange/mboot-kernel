@@ -11,4 +11,4 @@ kernel: kmain.o start.o Makefile
 	ld -m elf_i386 -T link.ld -o kernel kmain.o start.o
 
 run: kernel
-	qemu -kernel kernel
+	qemu-system-i386 -kernel kernel
