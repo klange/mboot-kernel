@@ -1,3 +1,4 @@
+.PHONY: all run
 all: kmain.o start.o kernel
 
 start.o: start.s
@@ -8,3 +9,6 @@ kmain.o: kmain.c
 
 kernel: kmain.o start.o Makefile
 	ld -m elf_i386 -T link.ld -o kernel kmain.o start.o
+
+run: kernel
+	qemu -kernel kernel
