@@ -15,11 +15,11 @@ SECTIONS
 	.data BLOCK(4K) : ALIGN(4K)
 	{
 		*(.data)
+		*(.bootstrap_stack)
 	}
 	.bss BLOCK(4K) : ALIGN(4K)
 	{
 		*(COMMON)
 		*(.bss)
-		*(.bootstrap_stack)
 	}
 }

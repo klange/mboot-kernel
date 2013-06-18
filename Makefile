@@ -1,4 +1,4 @@
-.PHONY: all run
+.PHONY: all run clean
 all: kmain.o start.o kernel
 
 start.o: start.s
@@ -16,3 +16,8 @@ run: kernel
 # Other demos
 boot.img: boot.s
 	yasm -f bin -o boot.img boot.s
+
+clean:
+	rm -f *.o
+	rm -f kernel
+	rm -f boot.img
